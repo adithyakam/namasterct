@@ -1,0 +1,22 @@
+{
+  "name": "namasterct",
+  "version": "1.0.0",
+  "description": "\"# namasterct\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adithyakam/namasterct.git"
+  },
+  "author": "adithya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adithyakam/namasterct/issues"
+  },
+  "homepage": "https://github.com/adithyakam/namasterct#readme",
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+}

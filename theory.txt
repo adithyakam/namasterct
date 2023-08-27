@@ -1,120 +1,34 @@
 
-What is NPM?
- It is a tool used for package management and the default package manager for Node projects. NPM is installed when NodeJS is installed on a machine. It comes with a command-line interface (CLI) used to interact with the online database of NPM. This database is called the NPM Registry, and it hosts public and private 'packages.' To add or update packages, we use the NPM CLI to interact with this database. 
-- npm alternative is yarn
-
- How to initialize npm?
-
-npm init
-
-npm init -y can be used to skip the setup step, npm takes care of it and creates the package.json json file automatically , but without configurations.
+What is JSX?
+JSX stands for JavaScript XML.
+JSX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement() and/or appendChild() methods.
+JSX converts HTML tags into react elements.
 
 
-What is Parcel/Webpack? Why do we need it?
- Parcel/Webpack is type of a web application bundler used for development and productions purposes or power our application with different type functionalities and features.
-It offers blazing fast performance utilizing multicore processing, and requires zero configuration. Parcel can take any type of file as an entry point, but an HTML or JavaScript file is a good place to start.
-Parcel/Webpack are type of bundlers that we use to power our application with different type functionalities and features.
-
- Parcel Features:
-Parcel is a web application bundler that simplifies the development process by providing several features:
-
-1. Zero Configuration: Parcel requires no complex configuration out of the box, making it easy to start coding quickly.
-
-2. Auto Dependency Resolution: Automatically identifies and bundles dependencies like JavaScript, CSS, and more, reducing manual setup.
-
-3. Hot Module Replacement: Supports real-time updates in the browser as you code, improving development speed and efficiency.
-
-4. Optimized Asset Handling: Automatically optimizes and bundles assets like images, fonts, and other files for production use.
-
-5. Code Splitting: Efficiently divides code into smaller chunks to improve load times by only loading what's necessary.
-
-6. Support for Various File Types: Handles a wide range of file types, including JSX, TypeScript, SCSS, and more, enhancing flexibility.
-
-7. Built-in Transforms: Supports automatic transformation for modern JavaScript features and other technologies without additional setup.
-
-8. Plugin System: Offers extensibility through plugins, allowing developers to add custom functionality as needed.
-
-9. Multi-Platform Support: Works for both web and Node.js projects, making it versatile for various development scenarios.
-
-10. Optimized Production Builds: Generates optimized and minified bundles for production deployment, enhancing performance.
-
-11. Easy Integration: Integrates smoothly with other tools and frameworks, offering a seamless development experience.
-
-12. Speed and Performance: Focuses on speed and performance, utilizing parallel processing for quicker builds.
-
-13. Caching: Utilizes caching mechanisms to minimize redundant work and accelerate subsequent builds.
-
-14. Code Analysis and Linting: Supports code analysis and linting tools, enhancing code quality and maintainability.
-
-15. Browser Compatibility: Ensures compatibility with various browsers and their different features.
-
-16. tree Shaking:  Tree shaking is process of removing the unwanted code that we do not use while developing the application.
-
-17. File watcher algorithm: File Watchers monitor directories on the file system and perform specific actions when desired files appear.
-
-
-
- Install:
-
-npm install -D parcel
-
- Parcel Commands :
-    - For development build:
+Role of type attribute in script tag? What options can I use there?
+ The type attribute specifies the type of the script. The type attribute identifies the content between the <script> and </script> tags. It has a Default value which is “text/javascript”.
+ type attribute can be of the following types:
+- text/javascript : It is the basic standard of writing javascript code inside the <script> tag.
+     Syntax
     
-    npx parcel <entry_point> 
+    <script type="text/javascript"></script>
     
-    - For production build :
-    
-    npx parcel build <entry_point> 
-    
+- text/ecmascript : this value indicates that the script is following the EcmaScript standards.
+- module: This value tells the browser that the script is a module that can import or export other files or modules inside it.
+- text/babel : This value indicates that the script is a babel type and required bable to transpile it.
+- text/typescript: As the name suggest the script is written in TypeScript.
 
-What is .parcel-cache?
-The .parcel-cache directory is a folder created by the Parcel bundler in your project's root directory. It is used to store cached data and intermediate build artifacts to improve the speed and efficiency of subsequent builds.
-When you run Parcel to bundle your project, it performs various tasks such as dependency resolution, transformation, and bundling. These tasks can be time-consuming, especially for larger projects. The .parcel-cache directory helps optimize the build process by storing the results of these tasks so that if you make changes to your code and run Parcel again, it can use the cached data instead of redoing everything from scratch.
+  {TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in JSX.
+ The Difference is stated below:
+- {TitleComponent}: This value describes the TitleComponent as a javascript expression or a variable. 
+The {} can embed a javascript expression or a variable inside it.
+- <TitleComponent/> : This value represents a Component that is basically returning Some JSX value. In simple terms TitleComponent a function that is returning a JSX value.
+A component is written inside the {<  />} expression.
+- <TitleComponent></TitleComponent> :  <TitleComponent /> and <TitleComponent></TitleComponent> are equivalent only when < TitleComponent /> has no child components. The opening and closing tags are created to include the child components.
+ Example
 
-
-
-
-What is npx?
- is used to execute Node.js packages or binaries, whether they are globally installed or not.
-
-
-What is the difference between package.json and package-lock.json?
- package.json:
-* This file is mandatory for every project
-* It contains basic information about the project
-* Application name/version/scripts
-
-package-lock.json:
-* This file is automatically generated for those operations where npm modifies either the node_module tree or package-json.
-* It is generated after an npm install
-* It allows future devs & automated systems to download the same dependencies as the project.
-* it also allows to go back to the past version of the dependencies without actual
-‘committing the node_modules folder.
-* It records the same version of the installed packages which allows to reinstall them.
-Future installs will be capable of building identical description tree.
-
-~ or ^ in package.json file :
-These are used with the versions of the package installed.
-
-For example  in package.json file:
-
-"dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  }
-
-
-* ~ : Approximately equivalent to version, will update you to all future patch versions, without incrementing the minor version.
-* ^ : Compatible with version, will update you to all future minor/patch versions, without incrementing the major version.
-
-Why should I not modify package-lock.json?
- package-lock.json file contains the information about the dependencies and their versions used in the project. Deleting it would cause dependencies issues in the production environment. So don't modify it, It's being handled automatically by NPM.
-
-
-What is the dist folder?
- The /dist folder contains the minimized version of the source code. The code present in the /dist folder is actually the code which is used on production web applications. Along with the minified code, the /dist folder also comprises of all the compiled modules that may or may not be used with other systems.
-
-
-What is browserslist?
- Browserslist is a tool that allows specifying which browsers should be supported in your frontend app by specifying "queries" in a config file. It's used by frameworks/libraries such as React, Angular and Vue, but it's not limited to them.
+<TitleComponent>
+    <FirstChildComponent />
+    <SecondChildComponent />
+    <ThirdChildComponent />
+</TitleComponent>
